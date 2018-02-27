@@ -16,6 +16,8 @@ namespace Mython_Launcher
         static string Mython_URL = "https://www.dropbox.com/s/r7hdlyff4870j12/Mython.zip?dl=1";
         static string Mython_Path = MythonDir + ".zip";
 
+        static string java_home = "setx -m JAVA_HOME " + '\u0022' + Environment.CurrentDirectory + @"\Mython\Java" + '\u0022' + " && echo %JAVA_HOME%";
+
         String[] cb1 = { "true", "false" };
         String[] cb2 = { "DEFAULT", "FLAT", "LARGEBIOMES", "AMPLIFIED" };
         String[] cb3 = { "peaceful", "easy", "normal", "difficult" };
@@ -102,22 +104,58 @@ namespace Mython_Launcher
 
         private void downCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            ZipFile.ExtractToDirectory(Mython_Path, MythonDir);
-            statusLbl.Text = "압축 푸는중...";
-            statusLbl.ForeColor = System.Drawing.Color.Black;
-            FileInfo fi = new FileInfo(Mython_Path);
-            DirectoryInfo di = new DirectoryInfo(MythonDir);
-            fi.Delete();
-            if (di.Exists == true)
-            {
-                MessageBox.Show("다운로드가 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            isDonwload = false;
             btnOpen.Enabled = true;
             btnLaunch.Enabled = true;
             btnConfig.Enabled = true;
             btnInstall.Enabled = true;
+            MessageBox.Show("다운로드가 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerSupportsCancellation = true;
+            worker.DoWork += new DoWorkEventHandler(doWork);
+            //worker.ProgressChanged += new ProgressChangedEventHandler(worker_Progress);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_Completed);
+            worker.RunWorkerAsync();
+            isDonwload = true;
+            MessageBox.Show("압축 푸는중", "알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            statusLbl.ForeColor = System.Drawing.Color.Black;
+            statusLbl.Text = "압축 푸는중";
+        }
+
+        private void worker_Completed(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message, "Error");
+                return;
+            }
             isDonwload = false;
+            MessageBox.Show("압축 풀기가 완료되었습니다.", "다운로드 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void worker_Progress(object sender, ProgressChangedEventArgs e)
+        {
+            isDonwload = true;
+            MessageBox.Show("worker_Progress 함수 시작");
+            progressBar.Value = e.ProgressPercentage;
+            statusLbl.ForeColor = System.Drawing.Color.Black;
+            statusLbl.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void doWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                FileInfo fi = new FileInfo(Mython_Path);
+                //DirectoryInfo di = new DirectoryInfo(MythonDir);
+                ZipFile.ExtractToDirectory(Mython_Path, MythonDir);
+                fi.Delete();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void OpenFile(string dir)
