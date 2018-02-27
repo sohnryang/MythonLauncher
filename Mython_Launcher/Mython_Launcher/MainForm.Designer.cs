@@ -54,28 +54,29 @@ namespace Mython_Launcher
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar,
             this.statusLbl});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 216);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 272);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(275, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(275, 26);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // progressBar
             // 
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(100, 16);
+            this.progressBar.Size = new System.Drawing.Size(100, 20);
             // 
             // statusLbl
             // 
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(54, 17);
+            this.statusLbl.Size = new System.Drawing.Size(54, 21);
             this.statusLbl.Text = "statusLbl";
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(12, 12);
+            this.btnOpen.Location = new System.Drawing.Point(12, 15);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(122, 40);
+            this.btnOpen.Size = new System.Drawing.Size(122, 50);
             this.btnOpen.TabIndex = 1;
             this.btnOpen.Text = "서버 실행";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -83,9 +84,10 @@ namespace Mython_Launcher
             // 
             // btnLaunch
             // 
-            this.btnLaunch.Location = new System.Drawing.Point(12, 68);
+            this.btnLaunch.Location = new System.Drawing.Point(12, 85);
+            this.btnLaunch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLaunch.Name = "btnLaunch";
-            this.btnLaunch.Size = new System.Drawing.Size(122, 40);
+            this.btnLaunch.Size = new System.Drawing.Size(122, 50);
             this.btnLaunch.TabIndex = 2;
             this.btnLaunch.Text = "Minecraft 실행";
             this.btnLaunch.UseVisualStyleBackColor = true;
@@ -93,9 +95,10 @@ namespace Mython_Launcher
             // 
             // btnConfig
             // 
-            this.btnConfig.Location = new System.Drawing.Point(140, 12);
+            this.btnConfig.Location = new System.Drawing.Point(140, 15);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(122, 40);
+            this.btnConfig.Size = new System.Drawing.Size(122, 50);
             this.btnConfig.TabIndex = 3;
             this.btnConfig.Text = "서버 설정 열기";
             this.btnConfig.UseVisualStyleBackColor = true;
@@ -103,9 +106,10 @@ namespace Mython_Launcher
             // 
             // btnInstall
             // 
-            this.btnInstall.Location = new System.Drawing.Point(140, 68);
+            this.btnInstall.Location = new System.Drawing.Point(140, 85);
+            this.btnInstall.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInstall.Name = "btnInstall";
-            this.btnInstall.Size = new System.Drawing.Size(122, 40);
+            this.btnInstall.Size = new System.Drawing.Size(122, 50);
             this.btnInstall.TabIndex = 4;
             this.btnInstall.Text = "Python IDE 실행";
             this.btnInstall.UseVisualStyleBackColor = true;
@@ -119,9 +123,11 @@ namespace Mython_Launcher
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 115);
+            this.groupBox1.Location = new System.Drawing.Point(12, 144);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 98);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(250, 122);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "서버 설정";
@@ -129,69 +135,74 @@ namespace Mython_Launcher
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(110, 66);
+            this.comboBox3.Location = new System.Drawing.Point(110, 82);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
+            this.comboBox3.Size = new System.Drawing.Size(121, 23);
             this.comboBox3.TabIndex = 8;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(110, 40);
+            this.comboBox2.Location = new System.Drawing.Point(110, 50);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2.Size = new System.Drawing.Size(121, 23);
             this.comboBox2.TabIndex = 7;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 69);
+            this.label3.Location = new System.Drawing.Point(41, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 12);
+            this.label3.Size = new System.Drawing.Size(65, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "difficulty : ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 43);
+            this.label2.Location = new System.Drawing.Point(31, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 12);
+            this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "level-type : ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 17);
+            this.label1.Location = new System.Drawing.Point(15, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 12);
+            this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "online-mode : ";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(110, 14);
+            this.comboBox1.Location = new System.Drawing.Point(110, 18);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 238);
+            this.ClientSize = new System.Drawing.Size(275, 298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnInstall);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnLaunch);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.statusStrip1);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Launcher";
             this.Load += new System.EventHandler(this.Launcher_Load);
