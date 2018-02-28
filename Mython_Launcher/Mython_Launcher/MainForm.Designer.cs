@@ -89,7 +89,7 @@ namespace Mython_Launcher
             this.btnLaunch.Name = "btnLaunch";
             this.btnLaunch.Size = new System.Drawing.Size(122, 50);
             this.btnLaunch.TabIndex = 2;
-            this.btnLaunch.Text = "Minecraft 실행";
+            this.btnLaunch.Text = "MDK  실행 (Experimental)";
             this.btnLaunch.UseVisualStyleBackColor = true;
             this.btnLaunch.Click += new System.EventHandler(this.btnLaunch_Click);
             // 
